@@ -159,7 +159,7 @@ class nginx {
 				/**
 				 * this HAS to be set for the default host in nginx or else no vhost will work
 				 */
-				$this->nginx_data[$vhost_filename] .= "\t". 'listen    ' . $ip . ':' . $port . ' default'. ($ssl_vhost == true ? ' ssl' : '') . ';' . "\n";
+				$this->nginx_data[$vhost_filename] .= "\t". 'listen    ' . $ip . ':' . $port . ' default'. ($ssl_vhost == true ? (Settings::Get('nginx.enable_spdy') ? ' ssl spdy' : ' ssl') : '') . ';' . "\n";
 
 				$this->nginx_data[$vhost_filename] .= "\t".'# Froxlor default vhost' . "\n";
 				$this->nginx_data[$vhost_filename] .= "\t".'server_name    ' . Settings::Get('system.hostname') . ';' . "\n";

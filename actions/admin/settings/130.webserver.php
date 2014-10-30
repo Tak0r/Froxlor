@@ -167,6 +167,15 @@ return array(
 					'save_method' => 'storeSettingField',
 					'websrv_avail' => array('nginx')
 					),
+				'nginx_enable_spdy' => array(
+					'label' => $lng['serversettings']['nginx_enable_spdy'],
+					'settinggroup' => 'nginx',
+					'varname' => 'enable_spdy',
+					'type' => 'bool',
+					'default' => false,
+					'save_method' => 'storeSettingField',
+					'websrv_avail' => array('nginx')
+					),
 				'defaultwebsrverrhandler_enabled' => array(
 					'label' => $lng['serversettings']['defaultwebsrverrhandler_enabled'],
 					'settinggroup' => 'defaultwebsrverrhandler',
