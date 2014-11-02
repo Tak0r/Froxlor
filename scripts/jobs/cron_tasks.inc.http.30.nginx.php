@@ -160,7 +160,7 @@ class nginx {
 				 * this HAS to be set for the default host in nginx or else no vhost will work
 				 */
 				$this->nginx_data[$vhost_filename] .= "\t". 'listen    ' . $ip . ':' . $port . ' default'. ($ssl_vhost == true ? (Settings::Get('nginx.enable_spdy') ? ' ssl spdy' : ' ssl') : '') . ';' . "\n";
-
+				
 				$this->nginx_data[$vhost_filename] .= "\t".'# Froxlor default vhost' . "\n";
 				$this->nginx_data[$vhost_filename] .= "\t".'server_name    ' . Settings::Get('system.hostname') . ';' . "\n";
 				$this->nginx_data[$vhost_filename] .= "\t".'access_log      /var/log/nginx/access.log;' . "\n";
@@ -366,7 +366,7 @@ class nginx {
 				$_vhost_content .= $ipandport['default_vhostconf_domain'] . "\n";
 			}
 
-			$vhost_content.= "\t" . 'listen ' . $ipport . ($ssl_vhost == true ? ' ssl' : '') . ';' . "\n";
+			$vhost_content.= "\t" . 'listen ' . $ipport . ($ssl_vhost == true ? (Settings::Get('nginx.enable_spdy') ? ' ssl spdy' : ' ssl') : '') . ';' . "\n";
 		}
 
 		// get all server-names
