@@ -1549,4 +1549,5 @@ $lng['admin']['customer_news_feed_url'] = "RSS-Feed für den benutzerdefinierten
 $lng['serversettings']['dns_createhostnameentry'] = "Erstelle bind-Zone/Konfiguration für den System-Hostnamen";
 
 // Added in ??
-$lng['serversettings']['nginx_enable_spdy'] = "Aktiviere SPDY für SSL";
+$lng['serversettings']['nginx_enable_spdy']['title'] = "Aktiviere SPDY für SSL";
+$lng['serversettings']['nginx_enable_spdy']['description'] = "Emperimenteller Support für SPDY";
